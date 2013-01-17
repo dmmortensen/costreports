@@ -1,0 +1,5 @@
+id,Description,WKSHT_CD,LINE_NUM,CLMN_NUM
+,Total Employees on Payroll,S300001,02700,0100
+,Total Number of Beds,S300001,02700,0020
+,Total Number of Interns,S300001,02700,0090
+,Total Non-Paid Workers,S300001,02700,0110
