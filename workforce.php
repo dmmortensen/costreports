@@ -18,7 +18,7 @@
 		
 		$innerQuery = mysql_query("SELECT * FROM 2552_10".substr($row['WKSHT_CD'],0,1)."");
 		
-		//step through and echo the description and values
+		//step through and echo the description and valuesadfasf
 		echo test;
 		while($row2 = mysql_fetch_array($innerQuery)){
 			echo $row2['description'] . ' = ' .$row2['ITM_VAL_NUM'];
