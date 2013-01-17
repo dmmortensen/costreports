@@ -16,7 +16,11 @@
 		$workforceArray[$i] = array($row['WKSHT_CD'], $row['LINE_NUM'],$row['CLMN_NUM']);
 		$i++;
 		
-		$innerQuery = mysql_query("SELECT * FROM 2552_10".substr($row['WKSHT_CD'],0,1)."")
+		$innerQuery = mysql_query("SELECT * FROM 2552_10".substr($row['WKSHT_CD'],0,1)."");
+		
+		while($row2 = mysql_fetch_array($innerQuery)){
+			echo $row2['description'] . ' = ' .$row2['ITM_VAL_NUM'];
+		}
 		?> 
 		<div> 
 			<?php echo $row['WKSHT_CD']; ?>
