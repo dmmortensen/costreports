@@ -8,31 +8,20 @@
 	//query to return the coordinates
 	$workforceQuery = mysql_query("SELECT * FROM worksheet_reference WHERE category = 'workforce'");
 	
-	//counter for array
-	$i=0;
-	
 	while($row = mysql_fetch_array($workforceQuery)){
-		//add data to array and increment counter
-		$workforceArray[$i] = array($row['WKSHT_CD'], $row['LINE_NUM'],$row['CLMN_NUM']);
-		$i++;
 		
-		$innerQuery = mysql_query("SELECT * FROM 2552_10".substr($row['WKSHT_CD'],0,1)."");
+		$innerQuery = mysql_query("SELECT * FROM 2552_10".substr($row['WKSHT_CD'],0,1)." WHERE WKSHT_CD ='".$row['WKSHT_CD']."' AND LINE_NUM ='".$row['LINE_NUM']."' AND CLMN_NUM ='".$row['CLMN_NUM']."' AND RPT_REC_NUM ='".$getRecNum."' LIMIT 1;");
 		
 		//step through and echo the description and valuesadfasf
-		echo test;
-		while($row2 = mysql_fetch_array($innerQuery)){
-			echo $row2['description'] . ' = ' .$row2['ITM_VAL_NUM'];
-		}
-		?> 
-		<div> 
-			<?php echo $row['WKSHT_CD']; ?>
-			<?php echo $row['LINE_NUM']; ?>
-			<?php echo $row['CLMN_NUM']; ?> 
-		</div> 
-		<?php
-	}
-	
-	print_r($workforceArray);
+		 while($row2 = mysql_fetch_array($innerQuery)){
+		 	?>
+		 	<div>
+		 	<?php
+			echo $row['description'] . ' = ' .$row2['ITM_VAL_NUM'];
+			?>
+			</div>
+			<?php
+		}	}
 	
 	include('functions/footer.php');
 	

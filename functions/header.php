@@ -1,5 +1,6 @@
 <?php
 	
+	include('sql_select.php');
 	
 	$con = mysql_connect("localhost","root","");
 	if (!$con)
@@ -12,6 +13,8 @@
 	
 	if(isset($_GET['facility_num']))
 		$facilityNum = $_GET['facility_num'];
+	if(isset($_GET['RPT_REC_NUM']))
+		$getRecNum = $_GET['RPT_REC_NUM'];
 	
 	
 

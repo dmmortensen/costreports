@@ -3,7 +3,7 @@
 		
 		
 		$uri = $_SERVER["REQUEST_URI"];
-		$recNum;
+		$recNum = NULL;
 		
 		//lookup the other facility information from the * table
 		$rptQuery = mysql_query("SELECT * FROM rpt WHERE PRVDR_NUM = '".$facilityNum."' LIMIT 1");
@@ -20,7 +20,7 @@
 		$optionsQuery = mysql_query("SELECT * FROM analysis_categories;");
 		
 		while($row = mysql_fetch_array($optionsQuery)){?>
-			<div><a href="<?php echo $row['category'] ?>.php?rpt_rec_num=<?php echo $recNum; ?>"><?php echo $row['description'] ?></a></div>
+			<div><a href="<?php echo $row['category'] ?>.php?RPT_REC_NUM=<?php echo $recNum; ?>"><?php echo $row['description'] ?></a></div>
 		<?php }
 		
 /*
