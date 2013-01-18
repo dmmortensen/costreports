@@ -22,7 +22,7 @@
 			</div>
 			<?php
 		}	}
-	//test comment for desktop verification
+	//test comment for desktop verifications
 	include('functions/footer.php');
 	
 ?>
