@@ -16,12 +16,10 @@
 		 while($row2 = mysql_fetch_array($innerQuery)){
 		 	?>
 		 	<div>
-		 	<?php
-			echo $row['description'] . ' = ' .$row2['ITM_VAL_NUM'];
-			?>
+		 	<?php echo $row['description'] . ' = ' .$row2['ITM_VAL_NUM']; ?>
 			</div>
-			<?php
-		}	}
+		<?php }
+	}
 	//test comment for desktop verifications
 	include('functions/footer.php');
 	
