@@ -20,7 +20,7 @@
 			</div>
 		<?php }
 	}
-	//test comment for desktop verifications
+	//test comment for desktop verifications from VM
 	include('functions/footer.php');
 	
 ?>
